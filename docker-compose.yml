@@ -4,9 +4,6 @@ services:
   # bdd
   db:
     image: mongo:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: leoroot
-      MYSQL_DATABASE: mabase
     volumes:
       - db_data:/data/db
 
@@ -15,7 +12,6 @@ services:
     build: ./backend-projet
     command: node service-produits.js
     environment:
-      DB_PASS: leoroot
       PORT: 8080
     depends_on:
       - db
@@ -25,7 +21,6 @@ services:
     build: ./backend-projet
     command: node service-panier.js
     environment:
-      DB_PASS: leoroot
       PORT: 8000
     depends_on:
       - db
