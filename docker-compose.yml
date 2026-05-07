@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # bdd
+  db:
+    image: mongo:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: leoroot
+      MYSQL_DATABASE: mabase
+    volumes:
+      - db_data:/data/db
+
+  # Backend - Service Produits
+  backend-produits:
+    build: ./backend-projet
+    command: node service-produits.js
+    environment:
+      DB_PASS: leoroot
+      PORT: 8080
+    depends_on:
+      - db
+
+  # Backend - Service Panier
+  backend-panier:
+    build: ./backend-projet
+    command: node service-panier.js
+    environment:
+      DB_PASS: leoroot
+      PORT: 8000
+    depends_on:
+      - db
+
+  # Frontend Angular
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend-produits
+      - backend-panier
+
+  # Reverse Proxy
+  nginx-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'    
+      - '443:443'  
+      - '81:81'    
+    volumes:
+      - ./data/npm:/data
+      - ./data/letsencrypt:/etc/letsencrypt
+
+volumes:
+  db_data:

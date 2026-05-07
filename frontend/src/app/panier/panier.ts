@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class Panier implements OnInit {
   contenuPanier = signal<any[]>([]);
 
-  // On calcule le grand total : (Prix * Quantité) pour chaque article
+  // calcul du total : (Prix * Quantité) pour chaque article
   totalPanier = computed(() => {
     return this.contenuPanier().reduce((total, item) => total + ((item.prix || 0) * (item.quantite || 1)), 0);
   });
@@ -25,7 +25,8 @@ export class Panier implements OnInit {
   }
 
   chargerPanier() {
-    this.http.get<any[]>('http://localhost:8000/api/panier').subscribe(data => {
+    //this.http.get<any[]>('http://localhost:8000/api/panier').subscribe(data => {
+    this.http.get<any[]>('https://api-panier.leducl.3il-rodez-projets.site/api/panier').subscribe(data => {
       this.contenuPanier.set(data);
     });
   }

@@ -8,11 +8,10 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f7f6; /* Un gris très clair/moderne */
+  background-color: #f4f7f6; 
   color: #333;
 }
 
-/* On centre le contenu principal */
 main {
   max-width: 1200px;
   margin: 0 auto;

@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PanierService {
-  // Signal pour le compteur global
+
   compteur = signal<number>(0);
 
   constructor(private http: HttpClient) {

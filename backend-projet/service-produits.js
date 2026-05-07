@@ -1,16 +1,17 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient } = require('mongodb'); // Utilisation du client natif du cours
+const { MongoClient } = require('mongodb');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb://127.0.0.1:27017/';
+//const uri = 'mongodb://127.0.0.1:27017/';
+const uri = 'mongodb://db:27017/';
 const client = new MongoClient(uri);
 let db;
 
-// Le MIDDLEWARE exact demandé dans le cours
+// Le MIDDLEWARE
 async function getMongoDb(req, res, next) {
     try {
         if (!db) {

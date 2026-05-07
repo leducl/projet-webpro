@@ -41,7 +41,6 @@ h2 {
   align-items: center;
 }
 
-/* La mini image à la place du caddie */
 .mini-image {
   width: 55px;
   height: 55px;
@@ -74,7 +73,6 @@ h2 {
   font-weight: 500;
 }
 
-/* La nouvelle poubelle stylisée */
 .btn-supprimer {
   background: #ffecec;
   border: none;
@@ -103,7 +101,6 @@ h2 {
   fill: white;
 }
 
-/* La section du Total */
 .total-container {
   display: flex;
   justify-content: space-between;
@@ -139,7 +136,7 @@ h2 {
 .actions-item {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espace entre le sous-total et la poubelle */
+  gap: 20px; 
 }
 
 .sous-total {

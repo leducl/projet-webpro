@@ -15,7 +15,8 @@ export class Produits implements OnInit {
   constructor(private http: HttpClient, private panierService: PanierService) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:8080/api/produits').subscribe(data => {
+    //this.http.get<any[]>('http://localhost:8080/api/produits').subscribe(data => {
+    this.http.get<any[]>('https://api-produits.leducl.3il-rodez-projets.site/api/produits').subscribe(data => {
       this.listeFruits.set(data);
     });
   }

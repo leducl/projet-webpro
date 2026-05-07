@@ -7,6 +7,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideHttpClient() // Activation du client HTTP
+    provideHttpClient() 
   ]
 };

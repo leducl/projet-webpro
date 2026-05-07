@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ObjectId } = require('mongodb'); // On ajoute ObjectId ici
+const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb://127.0.0.1:27017/';
+//const uri = 'mongodb://127.0.0.1:27017/';
+const uri = 'mongodb://db:27017/';
 const client = new MongoClient(uri);
 let db;
 
@@ -33,7 +34,7 @@ app.get('/api/panier', getMongoDb, async function (req, res) {
     }
 });
 
-// 2. Ajouter au panier (MÉTHODE PRO)
+// 2. Ajouter au panier
 app.post('/api/panier', getMongoDb, async function (req, res) {
     try {
         const produit = req.body;
@@ -61,7 +62,7 @@ app.post('/api/panier', getMongoDb, async function (req, res) {
     }
 });
 
-// 3. Supprimer du panier (MÉTHODE PRO)
+// 3. Supprimer du panier
 app.delete('/api/panier/:id', getMongoDb, async function (req, res) {
     try {
         const idToDelete = req.params.id;
