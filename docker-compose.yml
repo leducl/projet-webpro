@@ -44,5 +44,16 @@ services:
       - ./data/npm:/data
       - ./data/letsencrypt:/etc/letsencrypt
 
+  # Interface Graphique MongoDB
+  mongo-express:
+    image: mongo-express:latest
+    restart: unless-stopped
+    ports:
+      - '8081:8081'
+    environment:
+      ME_CONFIG_MONGODB_SERVER: db
+    depends_on:
+      - db
+      
 volumes:
   db_data:
