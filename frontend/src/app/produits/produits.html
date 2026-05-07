@@ -1,0 +1,25 @@
+<div class="header-page">
+  <h2>Nos Produits disponibles</h2>
+</div>
+
+@if (messageToast()) {
+  <div class="toast show">
+    {{ messageToast() }}
+  </div>
+}
+
+<div class="grid-produits">
+  @for (fruit of listeFruits(); track $index) {
+    <div class="carte-produit">
+      @if (fruit.image) {
+        <img [src]="fruit.image" [alt]="fruit.nom" class="image-fruit">
+      }
+      <div class="contenu-carte">
+        <h3>{{ fruit.nom }}</h3>
+        <p class="description">{{ fruit.description }}</p>
+        <p class="prix">{{ fruit.prix }} €</p>
+        <button (click)="ajouter(fruit)">Ajouter au panier</button>
+      </div>
+    </div>
+  }
+</div>

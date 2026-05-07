@@ -1,0 +1,13 @@
+<header class="navbar">
+  <h1>FreshShop</h1>
+  <nav>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+    <a routerLink="/produits" routerLinkActive="active">Produits</a>
+    <a routerLink="/panier" routerLinkActive="active" class="lien-panier">
+      Mon Panier
+      @if (panierService.compteur() > 0) {
+        <span class="badge">{{ panierService.compteur() }}</span>
+      }
+    </a>
+  </nav>
+</header>

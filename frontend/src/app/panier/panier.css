@@ -1,0 +1,153 @@
+.panier-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 15px;
+}
+
+.vide {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+.liste-panier {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liste-panier li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f4f7f6;
+}
+
+.infos-item {
+  display: flex;
+  align-items: center;
+}
+
+/* La mini image à la place du caddie */
+.mini-image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px;
+  border: 1px solid #ecf0f1;
+}
+
+.icone {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.details-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.nom-produit {
+  font-size: 16px;
+  color: #34495e;
+  font-weight: 600;
+}
+
+.prix-item {
+  font-size: 14px;
+  color: #27ae60;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* La nouvelle poubelle stylisée */
+.btn-supprimer {
+  background: #ffecec;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.icon-trash {
+  width: 20px;
+  height: 20px;
+  fill: #e74c3c;
+  transition: fill 0.3s ease;
+}
+
+.btn-supprimer:hover {
+  background: #e74c3c;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.btn-supprimer:hover .icon-trash {
+  fill: white;
+}
+
+/* La section du Total */
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px dashed #bdc3c7;
+}
+
+.total-container h3 {
+  color: #2c3e50;
+  font-size: 20px;
+}
+
+.prix-total {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+
+.badge-quantite {
+  background-color: #f39c12;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 13px;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.actions-item {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espace entre le sous-total et la poubelle */
+}
+
+.sous-total {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #ecf0f1;
+}
