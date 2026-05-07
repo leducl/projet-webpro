@@ -26,7 +26,7 @@ export class Panier implements OnInit {
 
   chargerPanier() {
     //this.http.get<any[]>('http://localhost:8000/api/panier').subscribe(data => {
-    this.http.get<any[]>('https://api-panier.leducl.3il-rodez-projets.site/api/panier').subscribe(data => {
+    this.http.get<any[]>('/api/panier').subscribe(data => {
       this.contenuPanier.set(data);
     });
   }
