@@ -98,3 +98,11 @@ button:hover {
   transform: translateY(0);
   opacity: 1;
 }
+
+
+@media (max-width: 480px) {
+  .grid-produits {
+    grid-template-columns: 1fr; 
+    gap: 15px;
+  }
+}
