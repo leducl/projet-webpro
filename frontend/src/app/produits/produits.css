@@ -102,7 +102,37 @@ button:hover {
 
 @media (max-width: 480px) {
   .grid-produits {
-    grid-template-columns: 1fr; 
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .image-fruit {
+    height: 100px; 
+  }
+  
+  .contenu-carte {
+    padding: 10px; 
+  }
+
+  .carte-produit h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    font-size: 11px;
+    margin-bottom: 10px;
+    min-height: auto; 
+  }
+
+  .prix {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 8px 5px;
+    font-size: 12px;
   }
 }
